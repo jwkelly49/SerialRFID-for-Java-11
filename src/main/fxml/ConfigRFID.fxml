@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="516.0" prefWidth="764.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ConfigRFIDController.java">
+   <children>
+      <SplitPane dividerPositions="0.4881889763779528" layoutX="123.0" layoutY="66.0" prefHeight="516.0" prefWidth="764.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray;">
+               <children>
+                  <TextArea editable="false" prefHeight="435.0" prefWidth="369.0" stylesheets="@AboutTextBG.css" text="&#10;&#10;Before you can use the SerialRFID program you must configure a few items:&#10;&#10;1 -- A COMM Port&#10;2 -- Use or don't use the JMRI mode&#10;3 -- Select the path for:&#10;           -- OperationsCarRoster.xml&#10;           -- OperationsEngineRoster.xml&#10;           -- OperationsLocationRoster.xml" wrapText="true">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </TextArea>
+                  <TextArea editable="false" layoutY="445.0" prefHeight="70.0" prefWidth="369.0" style="-fx-background-color: lightgray;" stylesheets="@AboutTextBG.css" text="The JMRI mode may be configured later using the FILE--Configure menu entry." wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextArea>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0" style="-fx-background-color: lightgray;">
+               <children>
+                  <Label layoutX="39.0" layoutY="53.0" text="COMM Port">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="commPort" layoutX="137.0" layoutY="48.0" onAction="#TFcommPort" prefHeight="25.0" prefWidth="217.0" promptText="COM1">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <RadioButton fx:id="TBnotUseJMRI" layoutX="186.0" layoutY="128.0" mnemonicParsing="false" onAction="#HideBox" text="Don't Use JMRI">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="JMRIstatus" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="RBuseJMRI" layoutX="55.0" layoutY="128.0" mnemonicParsing="false" onAction="#ShowBox" selected="true" text="Use JMRI" toggleGroup="$JMRIstatus">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </RadioButton>
+                  <Pane id="filebox" fx:id="JMRIbox" layoutX="30.0" layoutY="157.0" prefHeight="272.0" prefWidth="327.0" style="-fx-background-color: lightgray;">
+                     <children>
+                        <TextField fx:id="carRoster" layoutX="14.0" layoutY="34.0" onAction="#TFcarRoster" prefHeight="30.0" prefWidth="301.0" promptText="path + file name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="engineRoster" layoutX="14.0" layoutY="106.0" onAction="#TFengineRoster" prefHeight="30.0" prefWidth="301.0" promptText="path + file name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <TextField fx:id="locationRoster" layoutX="13.0" layoutY="182.0" onAction="#TFlocationRoster" prefHeight="30.0" prefWidth="301.0" promptText="path + file name">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </TextField>
+                        <Button fx:id="BtnCarRoster" layoutX="14.0" layoutY="9.0" mnemonicParsing="false" onAction="#ActionCarRoster" text="CarRoster" />
+                        <Button fx:id="BtnEngineRoster" layoutX="13.0" layoutY="81.0" mnemonicParsing="false" onAction="#ActionEngineRoster" text="EngineRoster" />
+                        <Button fx:id="BtnLocationRoster" layoutX="13.0" layoutY="157.0" mnemonicParsing="false" onAction="#ActionLocationRoster" text="LocationRoster" />
+                     </children>
+                  </Pane>
+                  <Button fx:id="BtnSubmit" defaultButton="true" layoutX="51.0" layoutY="451.0" mnemonicParsing="false" onAction="#ActionSubmit" text="Submit">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="BtnCancel" cancelButton="true" layoutX="215.0" layoutY="451.0" mnemonicParsing="false" onAction="#ActionCancel" text="Cancel">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

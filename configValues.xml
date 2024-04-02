@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<config>
+    <PollingMode>false</PollingMode>
+    <JMRIMode>false</JMRIMode>
+    <JMRIstatus>true</JMRIstatus>
+    <CarRoster>C:\Users\jwkel\Desktop\JMRItest\OperationsCarRoster.xml</CarRoster>
+    <EngineRoster>C:\Users\jwkel\Desktop\JMRItest\OperationsEngineRoster.xml</EngineRoster>
+    <LocationRoster>C:\Users\jwkel\Desktop\JMRItest\OperationsLocationRoster.xml</LocationRoster>
+    <ComPort>COM4</ComPort>
+</config>

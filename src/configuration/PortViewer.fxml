@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="471.0" prefWidth="364.0" style="-fx-background-color: lightgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="configuration.PortViewerController">
+   <children>
+      <Button fx:id="BtnSave" layoutX="47.0" layoutY="407.0" mnemonicParsing="false" onAction="#BtnSaveAction" prefHeight="39.0" prefWidth="118.0" stylesheets="@AboutTextBG.css" text="Save">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="BtnCancel" defaultButton="true" layoutX="197.0" layoutY="407.0" mnemonicParsing="false" onAction="#BtnCancelAction" prefHeight="39.0" prefWidth="118.0" text="Cancel">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <ListView fx:id="Listbox" editable="true" layoutX="48.0" layoutY="171.0" onMouseClicked="#ListboxMouseClick" prefHeight="149.0" prefWidth="268.0" />
+      <TextArea editable="false" layoutX="47.0" layoutY="14.0" prefHeight="149.0" prefWidth="268.0" style="-fx-background-color: lightgray;" stylesheets="@AboutTextBG.css" text="A valid COM port must be selected before SerialRFID will be allowed to open.&#10;&#10;Choose from the list below" wrapText="true">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextArea>
+      <TextField fx:id="TFselectedPort" layoutX="51.0" layoutY="351.0" prefHeight="39.0" prefWidth="261.0" promptText="Selected port" style="-fx-background-color: lightgray; -fx-border-color: darkgray;">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="47.0" layoutY="320.0" prefHeight="30.0" prefWidth="125.0" style="-fx-background-color: lightgray;" text="Selected Port:">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>
