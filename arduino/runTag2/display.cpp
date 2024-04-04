@@ -2,54 +2,61 @@
 #include "runTag2.h"
 #endif
 
-bool redFlash = false;
-bool redSolid = false;
-bool greenFlash = false;
-bool greenSolid = false;
+/*
+ * Try flashing LEDs but couldn't get COMMs to be stable.
+ * I left the logic thinking it might be used with a
+ * different chip like the esp32 (with 2 CPUs)
+ */
 
-void flashLoop() {
-  unsigned long looping = millis();
-  unsigned long flash = millis();
-  unsigned long x;
-  bool z = false;
-  bool flasher;
-  int count = 0;
-  while (count < 6) {
-    x = looping - flash;                               // create a half second timer
-    if (x >= 500) {
-      flash = looping;
-      if (!z) {                                          // toggle the flasher
-        z = true;
-        flasher = true;
-      } else {
-        z = false;
-        flasher = false;
-      }
-      ++count;
-    }
-    if ((redFlash and flasher) or redSolid ) {           // NOTE: LED delays can't be used
-      digitalWrite(redPin, HIGH);                        // as they prevent comm from syncing
-    } else {                                             
-      digitalWrite(redPin, LOW);
-    }
-    if ((greenFlash and flasher) or greenSolid ) {
-      digitalWrite(greenPin, HIGH);
-    } else {
-      digitalWrite(greenPin, LOW);
-    }
-    looping =  millis();
-  }
-}
+
+//bool redFlash = false;
+//bool redSolid = false;
+//bool greenFlash = false;
+//bool greenSolid = false;
+
+//void flashLoop() {
+//  unsigned long looping = millis();
+//  unsigned long flash = millis();
+//  unsigned long x;
+//  bool z = false;
+//  bool flasher;
+//  int count = 0;
+//  while (count < 6) {
+//    x = looping - flash;                               // create a half second timer
+//    if (x >= 500) {
+//      flash = looping;
+//      if (!z) {                                          // toggle the flasher
+//        z = true;
+//        flasher = true;
+//      } else {
+//        z = false;
+//        flasher = false;
+//      }
+//      ++count;
+//    }
+//    if ((redFlash and flasher) or redSolid ) {           // NOTE: LED delays can't be used
+//      digitalWrite(redPin, HIGH);                        // as they prevent comm from syncing
+//    } else {                                             
+//      digitalWrite(redPin, LOW);
+//    }
+//    if ((greenFlash and flasher) or greenSolid ) {
+//      digitalWrite(greenPin, HIGH);
+//    } else {
+//      digitalWrite(greenPin, LOW);
+//    }
+//    looping =  millis();
+//  }
+//}
 
 void displayLCD(int value) {
   int show = value;
 
   switch (show) {
     case 1:
-      greenFlash = false;
-      greenSolid = false;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = false;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       //flashLoop();
@@ -57,10 +64,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 2:
-      greenFlash = false;
-      greenSolid = true;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = true;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       lcd.setCursor(0, 0);
@@ -76,10 +83,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 3:
-      greenFlash = false;
-      greenSolid = true;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = true;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       lcd.setCursor(0, 0);
@@ -95,10 +102,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 4:
-      greenFlash = false;
-      greenSolid = true;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = true;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       lcd.setCursor(0, 0);
@@ -114,10 +121,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 5:
-      greenFlash = false;
-      greenSolid = true;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = true;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       lcd.setCursor(0, 0);
@@ -133,10 +140,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 6:
-      greenFlash = false;
-      greenSolid = false;
-      redFlash = true;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = false;
+//      redFlash = true;
+//      redSolid = false;
       lcd.clear();
       lcd.blink();
       lcd.setCursor(0, 0);
@@ -152,10 +159,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, HIGH);
       break;
     case 7:
-      greenFlash = false;
-      greenSolid = false;
-      redFlash = false;
-      redSolid = true;
+//      greenFlash = false;
+//      greenSolid = false;
+//      redFlash = false;
+//      redSolid = true;
       lcd.clear();
       lcd.blink();
       lcd.setCursor(0, 0);
@@ -171,10 +178,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, HIGH);
       break;
     case 8:
-      greenFlash = false;
-      greenSolid = false;
-      redFlash = false;
-      redSolid = true;
+//      greenFlash = false;
+//      greenSolid = false;
+//      redFlash = false;
+//      redSolid = true;
       lcd.clear();
       lcd.blink();
       lcd.setCursor(0, 0);
@@ -190,10 +197,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, HIGH);
       break;
     case 9:
-      greenFlash = true;
-      greenSolid = false;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = true;
+//      greenSolid = false;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       lcd.setCursor(0, 0);
@@ -209,10 +216,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 10:
-      greenFlash = false;
-      greenSolid = true;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = true;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       lcd.setCursor(0, 0);
@@ -228,10 +235,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 11:
-      greenFlash = false;
-      greenSolid = true;
-      redFlash = false;
-      redSolid = false;
+//      greenFlash = false;
+//      greenSolid = true;
+//      redFlash = false;
+//      redSolid = false;
       lcd.clear();
       lcd.noBlink();
       lcd.setCursor(0, 0);
@@ -247,10 +254,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 12:
-      greenFlash = false;
-      greenSolid = false;
-      redFlash = false;
-      redSolid = true;
+//      greenFlash = false;
+//      greenSolid = false;
+//      redFlash = false;
+//      redSolid = true;
       lcd.clear();
       //lcd.blink();
       lcd.setCursor(0, 0);
@@ -266,10 +273,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, HIGH);
       break;
     case 13:
-      greenFlash = true;
-      greenSolid = false;
-      redFlash = true;
-      redSolid = false;
+//      greenFlash = true;
+//      greenSolid = false;
+//      redFlash = true;
+//      redSolid = false;
       lcd.clear();
       lcd.blink();
       lcd.setCursor(0, 0);
@@ -285,10 +292,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 14:
-      greenFlash = false;
-      greenSolid = false;
-      redFlash = false;
-      redSolid = true;
+//      greenFlash = false;
+//      greenSolid = false;
+//      redFlash = false;
+//      redSolid = true;
       lcd.clear();
       lcd.blink();
       lcd.setCursor(0, 0);
@@ -304,10 +311,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, HIGH);
       break;
     case 15:
-      greenFlash = true;
-      greenSolid = false;
-      redFlash = true;
-      redSolid = false;
+//      greenFlash = true;
+//      greenSolid = false;
+//      redFlash = true;
+//      redSolid = false;
       lcd.clear();
       lcd.blink();
       lcd.setCursor(0, 0);
@@ -323,10 +330,10 @@ void displayLCD(int value) {
       digitalWrite(redPin, LOW);
       break;
     case 16:
-      greenFlash = true;
-      greenSolid = false;
-      redFlash = true;
-      redSolid = false;
+//      greenFlash = true;
+//      greenSolid = false;
+//      redFlash = true;
+//      redSolid = false;
       lcd.clear();
       lcd.blink();
       lcd.setCursor(0, 0);

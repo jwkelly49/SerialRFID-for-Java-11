@@ -67,6 +67,9 @@ void command1() {
   String request;
   switch (pendingRequest) {
     case 20:
+      if(carID == "" ){               // assign the permanent engine -- used mostly for first time program launch  
+        carID = "0123456789";         // when database is empty. But available with fresh reboot of the Nano 
+      }                                
       request = "*" + String(thisReader) + "20~" + carID + "\n";                // carID check if engine and link with this reader
       xmitData(request);
       pendingReply = true;
