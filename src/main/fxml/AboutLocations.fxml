@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <SplitPane dividerPositions="0.49404117009750814" prefHeight="711.0" prefWidth="925.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
@@ -17,7 +17,7 @@
                <children>
                   <VBox layoutX="127.0" layoutY="102.0" prefHeight="709.0" prefWidth="453.0" style="-fx-background-color: lightgray; -fx-border-color: lightgray;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <TextArea editable="false" prefHeight="707.0" prefWidth="453.0" stylesheets="@AboutTextBG.css" text="SerialRFID requires at least reader 'A' be installed to be meaningful at all. As a result a permanent location and track are also provided (though you can change its name.) Locations can be as simple as a list of readers (See Readers menu) referred to by address; or given textual names. &#10;&#10;JMRI -- Locations may be imported or you may manually enter your own names. Think of Locations as major layout divisions i.e. yards, cities or industrial zones. &#10;&#10;JMRI also provides subdivision of locations into 'tracks.' SerialRFID therefore makes provisions for them as well. Think of tracks as smaller layout areas i.e. business siding or an individual track within a yard. &#10;&#10;Tracks will NOT have there own readers (it would then become a location) but can be displayed from the Locations menu for reference purposes.&#10;" wrapText="true">
+                        <TextArea editable="false" prefHeight="707.0" prefWidth="453.0" stylesheets="@AboutTextBG.css" text="SerialRFID requires at least reader 'A' be installed to be meaningful at all. As a result a permanent location and track are also provided (though you can change its name.) Locations can be as simple as a list of readers (See Readers menu) referred to by address; or given textual names. &#10;&#10;JMRI -- Locations may be imported or you may manually enter your own names. Think of Locations as major layout divisions i.e. yards, cities or industrial zones. &#10;&#10;JMRI also provides subdivision of locations into 'tracks.' SerialRFID therefore makes provisions for them as well. Think of tracks as smaller layout areas i.e. business siding or an individual track within a yard. &#10;&#10;Tracks will NOT have their own readers (it would then become a location) but can be displayed from the Locations menu for reference purposes.&#10;" wrapText="true">
                            <font>
                               <Font size="23.0" />
                            </font>
