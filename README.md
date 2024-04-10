@@ -3,6 +3,8 @@ To download use the release button on the right-hand side. You can use the EXE f
 Fundamentally SerialRFID provides the user with an easy to use Liquid Crystal Display (LCD) showing the road markings of your rolling stock. 
 To accomplish this each piece of stock must have a Radio Frequency Identification (RFID) tag. The local LCD display will show 
 
+Introductory videos can be seen @ https://www.youtube.com/@jwkelly49/playlists
+
 1- Type (box car), 
 
 2- Color (Green), 
