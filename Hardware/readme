@@ -2,4 +2,5 @@ The bill of materials (BOM) file may have a few holes but it should give you a g
 
 The Gerber file can be sent directly to JLCPCB, also integrated into EasyEDA ( https://jlcpcb.com/ ), to order the PCB without changes.
 
-The 2 json files can be imported directly into EasyEDA ( https://easyeda.com/ ) and then modified as desired.
+
+The two json files can be imported directly into EasyEDA and then modified.
